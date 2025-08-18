@@ -4,7 +4,7 @@
   <div class="not-found">
     <h1 class="not-found-title">Page not found</h1>
 
-    <RouterLink to="/" class="not-found-button">
+    <RouterLink to="/dashboard" class="not-found-button">
       Home
     </RouterLink>
   </div>

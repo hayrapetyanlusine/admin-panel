@@ -3,15 +3,18 @@ import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import { useFetch } from '@/utils/useFetch.ts'
 import type { User } from '@/interfaces/user.ts';
+import { useRouter } from 'vue-router';
 
 const { data, error } = useFetch<User[]>(`https://jsonplaceholder.typicode.com/users`)
 
+const router = useRouter()
+
 function editUser(user: User) {
-  console.log("edited user", user)
+  router.push(`/dashboard/user/${user.id}`)
 }
 
 function deleteUser(user: User) {
-  console.log("delete user", user)
+  alert(`delete | ${user.name}`)
 }
 </script>
 
