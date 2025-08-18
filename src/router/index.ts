@@ -12,6 +12,7 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView,
+      meta: { requiresAuth: false },
     },
     {
       path: '/dashboard',
@@ -20,6 +21,7 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/Dashboard.vue'),
+      meta: { requiresAuth: true },
       children: [
         {
           path: 'users',
@@ -37,6 +39,18 @@ const router = createRouter({
       component: () => import('../views/NotFound.vue')
     }
   ],
+})
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem('token')
+
+  if (to.meta.requiresAuth && !isAuthenticated) {
+    next('/login')
+  } else if (to.path === '/login' && isAuthenticated) {
+    next('/dashboard')
+  } else {
+    next()
+  }
 })
 
 export default router
