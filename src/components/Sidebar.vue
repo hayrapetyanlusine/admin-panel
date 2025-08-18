@@ -14,7 +14,7 @@ function toggle() {
       <h2 :class="['sidebar-title', { 'expanded': expended }]">Admin panel</h2>
       <i
         style="cursor: pointer"
-        :class="['pi', expended ? 'pi-chevron-circle-left' : 'pi-chevron-circle-right']"
+        :class="['pi', expended ? 'pi-chevron-circle-right' : 'pi-chevron-circle-left']"
         @click="toggle"
       ></i>
     </div>
