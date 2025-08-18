@@ -5,8 +5,17 @@ import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const searchText = ref(null);
+
+function logOut() {
+  localStorage.removeItem('token')
+  router.push('/login')
+}
+
 </script>
 
 <template>
@@ -20,7 +29,7 @@ const searchText = ref(null);
           <InputText v-model="searchText" placeholder="Search" />
         </IconField>
 
-        <Button type="button" icon="pi pi-sign-out" label="Log out" severity="secondary" />
+        <Button type="button" @click="logOut()" icon="pi pi-sign-out" label="Log out" severity="secondary" />
       </div>
       <router-view />
     </div>
