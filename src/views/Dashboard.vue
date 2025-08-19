@@ -1,21 +1,19 @@
 <script setup lang="ts">
-import Sidebar from '../components/Sidebar.vue'
 import Button from 'primevue/button';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import InputText from 'primevue/inputtext';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import Sidebar from '../components/Sidebar.vue'
 
 const router = useRouter()
-
 const searchText = ref(null);
 
 function logOut() {
   localStorage.removeItem('token')
   router.push('/login')
 }
-
 </script>
 
 <template>

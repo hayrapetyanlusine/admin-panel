@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import { useRouter } from 'vue-router';
 import { useFetch } from '@/utils/useFetch.ts'
 import type { User } from '@/interfaces/user.ts';
-import { useRouter } from 'vue-router';
 
 const { data, error } = useFetch<User[]>(`https://jsonplaceholder.typicode.com/users`)
-
 const router = useRouter()
 
 function editUser(user: User) {

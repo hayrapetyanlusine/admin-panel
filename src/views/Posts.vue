@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useFetch } from '@/utils/useFetch.ts';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import { useFetch } from '@/utils/useFetch.ts';
 import type { Post } from '@/interfaces/post.ts';
 
 const { data, error } = useFetch<Post[]>(`https://jsonplaceholder.typicode.com/posts?_limit=5`)
