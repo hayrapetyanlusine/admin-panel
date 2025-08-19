@@ -26,4 +26,8 @@ export interface User {
     phone: string;
     website: string;
     company: Company;
+    y?: any;
+    x?: any;
+    fy?: any;
+    fx?: any;
 }
