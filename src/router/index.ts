@@ -32,6 +32,10 @@ const router = createRouter({
         {
           path: 'posts',
           component: () => import('../views/Posts.vue'),
+        },
+        {
+          path: 'd3',
+          component: () => import('../views/D3Users.vue'),
         }
       ]
     },

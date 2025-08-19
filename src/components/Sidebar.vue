@@ -36,6 +36,15 @@ function toggle() {
         <i class="pi pi-inbox"></i>
         Posts
       </router-link>
+
+      <router-link
+          to="/dashboard/d3"
+          class="sidebar-link"
+          active-class="active-link"
+      >
+        <i class="pi pi-chart-scatter"></i>
+        D3.js
+      </router-link>
     </aside>
   </div>
 </template>
